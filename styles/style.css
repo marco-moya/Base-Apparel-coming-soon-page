@@ -1,0 +1,218 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.coming-soon {
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: hsl(0, 6%, 24%);
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+}
+.coming-soon__main {
+  width: 100%;
+  max-width: 400px;
+  grid-area: content;
+}
+@media (min-width: 64rem) {
+  .coming-soon__main {
+    display: grid;
+    grid-template-columns: 1.33fr 1fr;
+    grid-template-areas: "header hero" "content hero";
+    max-width: none;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+.coming-soon__header {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+@media (min-width: 64rem) {
+  .coming-soon__header {
+    grid-area: header;
+    max-width: 550px;
+    justify-self: center;
+  }
+}
+.coming-soon__logo {
+  width: 120px;
+}
+@media (min-width: 64rem) {
+  .coming-soon__logo {
+    width: 180px;
+  }
+}
+.coming-soon__image {
+  width: 100%;
+}
+@media (min-width: 64rem) {
+  .coming-soon__image {
+    grid-area: hero;
+  }
+}
+.coming-soon__content {
+  width: 100%;
+  padding: 2rem;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 64rem) {
+  .coming-soon__content {
+    grid-area: content;
+    max-width: 550px;
+    justify-self: center;
+    gap: 1.5rem;
+    margin: 0;
+    margin-bottom: 3rem;
+  }
+}
+.coming-soon__title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+@media (min-width: 64rem) {
+  .coming-soon__title {
+    font-size: 4.5rem;
+    text-align: start;
+    letter-spacing: 20px;
+  }
+}
+.coming-soon__title--highlight {
+  font-weight: 300;
+  color: hsl(0, 36%, 70%);
+}
+.coming-soon__description {
+  text-align: center;
+  color: hsl(0, 36%, 70%);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3rem;
+}
+@media (min-width: 64rem) {
+  .coming-soon__description {
+    text-align: start;
+    font-size: 18px;
+    line-height: 1.8rem;
+  }
+}
+.coming-soon__form {
+  width: 100%;
+  margin-top: 1rem;
+}
+.coming-soon__input-wrapper {
+  position: relative;
+}
+.coming-soon__input {
+  width: 100%;
+  height: 3rem;
+  padding: 0.9rem 1rem;
+  padding-right: 4rem;
+  border-radius: 1.5rem;
+  border: 2px solid hsl(0, 36%, 70%);
+  outline: none;
+}
+@media (min-width: 64rem) {
+  .coming-soon__input {
+    padding: 1.5rem 2rem;
+    border-radius: 2rem;
+  }
+}
+.coming-soon__input::-moz-placeholder {
+  color: hsl(0, 36%, 70%);
+  font-weight: 600;
+}
+.coming-soon__input::placeholder {
+  color: hsl(0, 36%, 70%);
+  font-weight: 600;
+}
+.coming-soon__button {
+  width: 4rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  box-shadow: 0 3px 20px hsl(0, 36%, 70%);
+}
+.coming-soon__button:hover {
+  cursor: pointer;
+  background: hsl(0, 80%, 86%);
+  box-shadow: 0 15px 20px hsl(0, 36%, 70%);
+}
+@media (min-width: 64rem) {
+  .coming-soon__button {
+    width: 5rem;
+  }
+}
+.coming-soon__button-icon {
+  width: 12px;
+}
+.coming-soon__error {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  right: 5rem;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+@media (min-width: 64rem) {
+  .coming-soon__error {
+    right: 6rem;
+  }
+}
+.coming-soon__message-error {
+  padding: 1rem;
+  color: hsl(0, 93%, 68%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.error {
+  opacity: 1;
+}
+
+.input-error {
+  border-width: 3px;
+  border-color: hsl(0, 93%, 68%);
+  transition: all 100ms ease-in-out;
+}/*# sourceMappingURL=style.css.map */

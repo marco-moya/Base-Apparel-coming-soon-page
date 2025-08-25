@@ -1,0 +1,224 @@
+$Pink-400: hsl(0, 36%, 70%);
+$Red-500: hsl(0, 93%, 68%);
+$Gray-900: hsl(0, 6%, 24%);
+$font-Josefin-Sans: "Josefin Sans", sans-serif;
+
+@mixin content-direction($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin content-center($justify: center, $align: center) {
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin respond-to($breakpoint) {
+  @if ( $breakpoint == desktop) {
+    @media (min-width: 64rem) { @content }
+  }
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.coming-soon {
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  @include content-direction();
+  @include content-center();
+  color: $Gray-900;
+  font-size: 16px;
+  font-family: $font-Josefin-Sans;
+  
+  &__main {
+    width: 100%;
+    max-width: 400px;
+    grid-area: content;
+    @include respond-to(desktop) {
+      display: grid;
+      grid-template-columns: 1.33fr 1fr;
+      grid-template-areas: "header hero" "content hero";
+      max-width: none;
+      background-image: url("../images/bg-pattern-desktop.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    padding: 2rem;
+    @include content-direction(row);
+    @include content-center(start, center);
+    @include respond-to(desktop) {
+      grid-area: header;
+      max-width: 550px;
+      justify-self: center;
+    }
+  }
+  
+  &__logo {
+    width: 120px;
+    @include respond-to(desktop) {
+      width: 180px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    @include respond-to(desktop) {
+      grid-area: hero;
+    }
+  }
+  
+  &__content {
+    width: 100%;
+    padding: 2rem;
+    margin: 2rem 0;
+    @include content-direction();
+    @include content-center();
+    gap: 1rem;
+    @include respond-to(desktop) {
+      grid-area: content;
+      max-width: 550px;
+      justify-self: center;
+      gap: 1.5rem;
+      margin: 0;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    @include respond-to(desktop) {
+      font-size: 4.5rem;
+      text-align: start;
+      letter-spacing: 20px;
+    }
+  }
+
+  &__title--highlight {
+    font-weight: 300;
+    color: $Pink-400;
+  }
+
+  &__description {
+    text-align: center;
+    color: $Pink-400;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3rem;
+    @include respond-to(desktop) {
+      text-align: start;
+      font-size: 18px;
+      line-height: 1.8rem;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  &__input-wrapper {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    height: 3rem;
+    padding: 0.9rem 1rem;
+    padding-right: 4rem;
+    border-radius: 1.5rem;
+    border: 2px solid $Pink-400;
+    outline: none;
+    @include respond-to(desktop) {
+      padding: 1.5rem 2rem;
+      border-radius: 2rem;
+    }
+  }
+  
+  &__input::placeholder {
+    color: $Pink-400;
+    font-weight: 600;
+  }
+  
+
+  &__button {
+    width: 4rem;
+    height: 3rem;
+    @include content-direction();
+    @include content-center();
+    border: none;
+    outline: none;
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 20px $Pink-400;
+    &:hover {
+      cursor: pointer;
+      background: hsl(0, 80%, 86%);
+      box-shadow: 0 15px 20px $Pink-400;
+    }
+    @include respond-to(desktop) {
+      width: 5rem;
+    }
+  }
+
+  &__button-icon {
+    width: 12px;
+  }
+
+  &__error {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    right: 5rem;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+    @include respond-to(desktop) {
+      right: 6rem;
+    }
+  }
+  
+  &__message-error {
+    padding: 1rem;
+    color: $Red-500;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+  }
+}
+
+.error {
+  opacity: 1;
+}
+
+.input-error {
+  border-width: 3px;
+  border-color: $Red-500;
+  transition: all 100ms ease-in-out;
+}

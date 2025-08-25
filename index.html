@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+<body class="coming-soon">
+
+  <main class="coming-soon__main">
+    <header class="coming-soon__header">
+      <div class="coming-soon__logo">
+        <img src="./images/logo.svg" alt="Base Apparel" class="coming-soon__logo-image">
+      </div>
+    </header>
+
+    <figure class="coming-soon__image">
+      <picture>
+        <source media="(min-width: 64rem)" srcset="./images/hero-desktop.jpg">
+        <img src="./images/hero-mobile.jpg" alt="Fashion model" class="coming-soon__photo">
+      </picture>
+    </figure>
+
+    <section class="coming-soon__content">
+      <h1 class="coming-soon__title">
+        <span class="coming-soon__title--highlight">We're</span><br>
+        Coming Soon
+      </h1>
+
+      <p class="coming-soon__description">
+        Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+
+      <form class="coming-soon__form" id="form">
+        <div class="coming-soon__input-wrapper">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="coming-soon__input"
+            placeholder="Email Address"
+            >
+          <img src="./images/icon-error.svg" alt="icon-error" class="coming-soon__error" id="icon-error">
+          <button type="submit" class="coming-soon__button">
+            <img src="./images/icon-arrow.svg" alt="icon-arrow" class="coming-soon__button-icon">
+          </button>
+        </div>
+        <p class="coming-soon__message-error" id="message-error">Please provide a valid email</p>
+      </form>
+    </section>
+  </main>
+<script src="./main.js"></script>
+</body>
+
+</html>
